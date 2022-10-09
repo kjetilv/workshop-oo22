@@ -11,4 +11,9 @@ data class Probability(private val fraction: Double) : Comparable<Probability> {
 
     operator fun not() =
         Probability(1.0 - fraction)
+
+    infix fun and(probability: Probability) = this * probability
+
+    operator fun times(probability: Probability) =
+        Probability(fraction * probability.fraction)
 }

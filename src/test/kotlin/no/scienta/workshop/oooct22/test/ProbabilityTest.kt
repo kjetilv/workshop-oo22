@@ -27,4 +27,11 @@ class ProbabilityTest {
         val ratherUnlikely = Probability(0.25)
         assertThat(!ratherLikely).isEqualTo(ratherUnlikely)
     }
+
+    @Test
+    fun should_support_and() {
+        val evenOdds = Probability(0.5);
+        assertThat(evenOdds * evenOdds).isEqualTo(Probability(0.25))
+        assertThat(evenOdds and evenOdds).isEqualTo(Probability(0.25))
+    }
 }
