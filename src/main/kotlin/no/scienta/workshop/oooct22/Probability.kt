@@ -8,4 +8,7 @@ data class Probability(private val fraction: Double) : Comparable<Probability> {
             fraction > other.fraction -> 1
             else -> 0
         }
+
+    operator fun not() =
+        Probability(1.0 - fraction)
 }

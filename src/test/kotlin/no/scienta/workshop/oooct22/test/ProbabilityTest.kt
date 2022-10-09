@@ -20,4 +20,11 @@ class ProbabilityTest {
         assertThat(Probability(0.5)).isGreaterThan(Probability(0.1))
         assertThat(Probability(0.5)).isEqualByComparingTo(Probability(0.5))
     }
+
+    @Test
+    fun should_support_inversion() {
+        val ratherLikely = Probability(0.75)
+        val ratherUnlikely = Probability(0.25)
+        assertThat(!ratherLikely).isEqualTo(ratherUnlikely)
+    }
 }
