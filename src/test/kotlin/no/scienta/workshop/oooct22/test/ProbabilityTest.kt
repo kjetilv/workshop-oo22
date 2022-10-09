@@ -13,4 +13,11 @@ class ProbabilityTest {
 
         assertThat(Probability(1.0)).isNotEqualTo(Probability(.1))
     }
+
+    @Test
+    fun should_support_comparisons() {
+        assertThat(Probability(0.5)).isLessThan(Probability(0.6))
+        assertThat(Probability(0.5)).isGreaterThan(Probability(0.1))
+        assertThat(Probability(0.5)).isEqualByComparingTo(Probability(0.5))
+    }
 }
